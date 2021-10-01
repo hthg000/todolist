@@ -23,7 +23,7 @@ function App() {
       alert("Say something...");
       setName("");
     } else if (name && isEditing) {
-      if (list.find((item) => item.title === name)) {
+      if (list.find((item) => item.title === name && item.id !== editID)) {
         alert("This item already exists");
       } else {
         setList(
@@ -65,6 +65,10 @@ function App() {
   const removeItem = (id) => {
     setList(list.filter((item) => item.id !== id));
   };
+  const removeAllItem = (id) => {
+    setList([]);
+    setName("");
+  };
   const editItem = (id) => {
     const specificItem = list.find((item) => item.id === id);
     console.log(specificItem);
@@ -99,7 +103,7 @@ function App() {
             editItem={editItem}
             checkComplete={checkComplete}
           />
-          <button className="btn-remove-all" onClick={() => setList([])}>
+          <button className="btn-remove-all" onClick={removeAllItem}>
             Remove All
           </button>
         </div>
