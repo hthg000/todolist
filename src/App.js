@@ -23,17 +23,21 @@ function App() {
       alert("Say something...");
       setName("");
     } else if (name && isEditing) {
-      setList(
-        list.map((item) => {
-          if (item.id === editID) {
-            return { ...item, title: name, isComplete: false };
-          }
-          return item;
-        })
-      );
-      setName("");
-      setIsEditing(false);
-      setEditID("");
+      if (list.find((item) => item.title === name)) {
+        alert("This item already exists");
+      } else {
+        setList(
+          list.map((item) => {
+            if (item.id === editID) {
+              return { ...item, title: name, isComplete: false };
+            }
+            return item;
+          })
+        );
+        setName("");
+        setIsEditing(false);
+        setEditID("");
+      }
     } else if (name) {
       if (list.find((item) => item.title === name)) {
         alert("This item already exists");
