@@ -14,7 +14,8 @@ body {
 }
 .container {
   margin-top: 50px;
-  background: #f8a5c2;
+  // background: #f8a5c2;
+  background: linear-gradient(120deg, #f6d365, #fda085);
   width: 500px;
   height: 510px;
   border-radius: 10px;
@@ -24,6 +25,10 @@ body {
     padding-bottom: 10px;
     color: #fff;
     font-size: 40px;
+  }
+  form {
+    background: #fff;
+    border-radius: 5px;
   }
   .input {
     display: flex;
@@ -41,12 +46,13 @@ body {
       border-radius: 5px;
     }
     button {
-      padding: 10px 15px;
+      padding: 8px 13px;
+      margin: 5px;
       cursor: pointer;
       border: none;
       font-size: 18px;
       border-radius: 5px;
-      background: #3dc1d3;
+      background: #fd9644;
       color: #fff;
       &:hover {
         filter: brightness(110%);
@@ -161,7 +167,7 @@ body {
   border: none;
   font-size: 18px;
   border-radius: 5px;
-  background: #e55039;
+  background: #fd9644;
   color: #fff;
   &:hover {
     filter: brightness(110%);

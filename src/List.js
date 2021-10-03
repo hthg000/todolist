@@ -12,12 +12,6 @@ const List = ({ list, removeItem, editItem, checkComplete }) => {
           <article key={id} className="todo">
             <span className={isComplete ? "complete" : ""}>{title}</span>
             <div className="btn-container">
-              {/* <button
-                className="btn btn-complete"
-                onClick={() => checkComplete(id)}
-              >
-                <FiCheck />
-              </button> */}
               <div className="checkbox-container">
                 <input
                   type="checkbox"
