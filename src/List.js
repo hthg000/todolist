@@ -1,5 +1,4 @@
 import React from "react";
-import { FiCheck } from "react-icons/fi";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
