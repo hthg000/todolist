@@ -57,6 +57,7 @@ function App() {
       list.map((item) => {
         if (item.id === id) {
           item.isComplete = !item.isComplete;
+          // if()
         }
         return item;
       })
@@ -103,6 +104,10 @@ function App() {
             editItem={editItem}
             checkComplete={checkComplete}
           />
+        </div>
+      )}
+      {list.length > 1 && (
+        <div className="button">
           <button className="btn-remove-all" onClick={removeAllItem}>
             Remove All
           </button>

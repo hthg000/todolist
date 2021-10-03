@@ -6,19 +6,28 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 const List = ({ list, removeItem, editItem, checkComplete }) => {
   return (
     <>
-      {/* // <div className="todo"> */}
-      {list.map((item) => {
+      {list.map((item, index) => {
         const { id, title, isComplete } = item;
         return (
           <article key={id} className="todo">
             <span className={isComplete ? "complete" : ""}>{title}</span>
             <div className="btn-container">
-              <button
+              {/* <button
                 className="btn btn-complete"
                 onClick={() => checkComplete(id)}
               >
                 <FiCheck />
-              </button>
+              </button> */}
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id={`checkComplete-${index}`}
+                  checked={isComplete}
+                  onClick={() => checkComplete(id)}
+                />
+                <label htmlFor={`checkComplete-${index}`}></label>
+              </div>
+
               <button className="btn btn-edit" onClick={() => editItem(id)}>
                 <FaRegEdit />
               </button>
@@ -29,7 +38,6 @@ const List = ({ list, removeItem, editItem, checkComplete }) => {
           </article>
         );
       })}
-      {/* // </div> */}
     </>
   );
 };
